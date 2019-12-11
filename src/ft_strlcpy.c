@@ -1,15 +1,6 @@
-int				ft_strlen(char *str)
-{
-	int i;
+#include "../inc/libft.h"
 
-	i = 0;
-	if (!str)
-		return (0);
-	while (str[i])
-		i++;
-	return (i);
-}
-
+size_t      strlcpy(char *dst, const char *src, size_t size);
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
 	unsigned int i;

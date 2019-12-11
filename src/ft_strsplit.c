@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include "../inc/libft.h"
 
 int			is_a_charset(char to_compare, char c)
 {

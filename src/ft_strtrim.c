@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include "../inc/libft.h"
 
 int ft_strlen(const char *s)
 {

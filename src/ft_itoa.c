@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include "../inc/libft.h"
 
 long int		len_number(long int nb)
 {

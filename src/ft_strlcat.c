@@ -1,15 +1,6 @@
-unsigned int		ft_strlen(char *str)
-{
-	int i;
+#include "../inc/libft.h"
 
-	i = 0;
-	if (!str)
-		return (0);
-	while (str[i])
-		i++;
-	return (i);
-}
-
+int         strlcat(char *dst, const char *src, size_t size);
 unsigned int		ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	unsigned int i;

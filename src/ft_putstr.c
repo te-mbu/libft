@@ -1,7 +1,7 @@
-#include <unistd.h>
+#include "../inc/libft.h"
 
- void       ft_putstr(char const *s)
- {
-     while (*s)
+void ft_putstr(char const *s)
+{
+    while (*s)
         write(1, s++, 1);
- }
+}

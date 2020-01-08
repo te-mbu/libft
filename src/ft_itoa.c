@@ -1,20 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tembu <tembu@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/01/06 10:02:30 by tembu             #+#    #+#             */
+/*   Updated: 2020/01/07 17:17:55 by tembu            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+
 #include "../inc/libft.h"
 
-long int		len_number(long int nb)
+static long int		len_number(long int nb)
 {
 	if (nb < 0)
 		return (1 + len_number(nb * (-1)));
 	if (nb > 9)
 		return (1 + len_number(nb / 10));
 	return (1);
-}	
+}
 
-char			int_to_char(long int mod)
+static char			int_to_char(long int mod)
 {
 	return (mod + 48);
 }
 
-void			fill_words(long int nb, long int len_nb, char *result_nb)
+static void			fill_words(long int nb, long int len_nb, char *result_nb)
 {
 	long int div;
 	long int mod;
@@ -28,9 +42,9 @@ void			fill_words(long int nb, long int len_nb, char *result_nb)
 
 char			*ft_itoa(int n)
 {
-	long int nb;
-	long int len_nb;
-	char *result_nb;
+	long int	nb;
+	long int	len_nb;
+	char		*result_nb;
 
 	nb = n;
 	len_nb = len_number(nb);

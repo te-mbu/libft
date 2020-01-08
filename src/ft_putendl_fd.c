@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tembu <tembu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/06 10:03:30 by tembu             #+#    #+#             */
-/*   Updated: 2020/01/06 13:14:38 by tembu            ###   ########.fr       */
+/*   Created: 2020/01/08 17:05:02 by tembu             #+#    #+#             */
+/*   Updated: 2020/01/08 17:08:50 by tembu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "../inc/libft.h"
 
-char *ft_strcpy(char *s1, char *s2)
+void		ft_putendl_fd(char *s, int fd)
 {
-	int i;
-
-	i = 0;
-	while (s2[i])
-	{
-		s1[i] = s2[i];
-		i++;
-	}
-	s1[i] = '\0';
-	return (s1);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

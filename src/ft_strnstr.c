@@ -1,29 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tembu <tembu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/06 10:03:30 by tembu             #+#    #+#             */
-/*   Updated: 2020/01/06 13:14:38 by tembu            ###   ########.fr       */
+/*   Created: 2020/01/06 17:15:28 by tembu             #+#    #+#             */
+/*   Updated: 2020/01/07 18:03:05 by tembu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "../inc/libft.h"
 
-char *ft_strcpy(char *s1, char *s2)
+char		*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	int i;
+	char	*s1_real;
+	char	*s2_real;
+	size_t	i;
+	size_t	j;
+	size_t	len_s2;
 
 	i = 0;
-	while (s2[i])
+	len_s2 = ft_strlen(s2);
+	s1_real = (char *)s1;
+	s2_real = (char *)s2;
+	if (!s2_real[0])
+		return (s1_real);
+
+	while (s1_real[i] && i < n)
 	{
-		s1[i] = s2[i];
+		j = 0;
+		while (s1_real[i + j] == s2_real[j] && i + j < n)
+		{
+			if (j == len_s2 - 1)
+				return (s1_real + i);
+			j++;
+		}
 		i++;
 	}
-	s1[i] = '\0';
-	return (s1);
+	return (NULL);
 }

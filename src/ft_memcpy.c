@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tembu <tembu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/06 10:03:30 by tembu             #+#    #+#             */
-/*   Updated: 2020/01/06 13:14:38 by tembu            ###   ########.fr       */
+/*   Created: 2020/01/08 15:18:48 by tembu             #+#    #+#             */
+/*   Updated: 2020/01/08 15:53:31 by tembu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "../inc/libft.h"
 
-char *ft_strcpy(char *s1, char *s2)
+void	*ft_memcpy(void *s1, const void *s2, size_t n)
 {
-	int i;
+	size_t			i;
+	unsigned char	*src;
+	unsigned char	*dest;
 
 	i = 0;
-	while (s2[i])
+	if (!s1 && !s2)
+		return (NULL);
+	src = (unsigned char *)s2;
+	dest = (unsigned char *)s1;
+
+	while (i < n)
 	{
-		s1[i] = s2[i];
+		dest[i] = src[i];
 		i++;
 	}
-	s1[i] = '\0';
 	return (s1);
 }

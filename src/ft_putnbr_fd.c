@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tembu <tembu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/06 10:03:30 by tembu             #+#    #+#             */
-/*   Updated: 2020/01/06 13:14:38 by tembu            ###   ########.fr       */
+/*   Created: 2020/01/08 17:22:55 by tembu             #+#    #+#             */
+/*   Updated: 2020/01/08 17:35:14 by tembu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "../inc/libft.h"
 
-char *ft_strcpy(char *s1, char *s2)
+void			ft_putnbr_fd(int n, int fd)
 {
-	int i;
+	int div;
+	int mod;
 
-	i = 0;
-	while (s2[i])
+	if (n < 0)
 	{
-		s1[i] = s2[i];
-		i++;
+		ft_putchar_fd('-', fd);
+		if (n == -2147483648)
+		{
+			ft_putstr_fd("2147483648", fd);
+			return ;
+		}
+		n *= -1;
 	}
-	s1[i] = '\0';
-	return (s1);
+	div = n / 10;
+	mod = n % 10;
+	if (div != 0)
+		ft_putnbr_fd(div, fd);
+	ft_putchar_fd(mod + 48, fd);
 }

@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tembu <tembu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/06 10:03:30 by tembu             #+#    #+#             */
-/*   Updated: 2020/01/06 13:14:38 by tembu            ###   ########.fr       */
+/*   Created: 2020/01/06 14:06:37 by tembu             #+#    #+#             */
+/*   Updated: 2020/01/07 14:28:36 by tembu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "../inc/libft.h"
 
-char *ft_strcpy(char *s1, char *s2)
+char	*ft_strchr(const char *s, int c)
 {
-	int i;
+	int		i;
+	char	*str;
 
 	i = 0;
-	while (s2[i])
+	str = (char *)s;
+	if (c == '\0')
+		return (str + ft_strlen(s));
+	while (str[i])
 	{
-		s1[i] = s2[i];
+		if (str[i] == c)
+			return (str + i);
 		i++;
 	}
-	s1[i] = '\0';
-	return (s1);
+	return (NULL);
 }

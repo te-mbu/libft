@@ -6,7 +6,7 @@
 /*   By: tembu <tembu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 15:25:59 by tembu             #+#    #+#             */
-/*   Updated: 2020/01/07 14:34:27 by tembu            ###   ########.fr       */
+/*   Updated: 2020/01/09 12:27:21 by tembu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ char	*ft_strrchr(const char *s, int c)
 
 	i = 0;
 	j = -19;
-
 	str = (char *)s;
 	if (c == '\0')
 		return (str + ft_strlen(s));

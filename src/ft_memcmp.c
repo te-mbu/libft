@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tembu <tembu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/06 10:03:09 by tembu             #+#    #+#             */
-/*   Updated: 2020/01/06 13:14:52 by tembu            ###   ########.fr       */
+/*   Created: 2020/01/09 17:28:58 by tembu             #+#    #+#             */
+/*   Updated: 2020/01/09 17:44:03 by tembu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "../inc/libft.h"
 
-void ft_putstr(char const *s)
+int			ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    while (*s)
-        write(1, s++, 1);
+	size_t i;
+
+	i = 0;
+	while (n > 0)
+	{
+		if (((unsigned char *)s1)[i] != ((unsigned char *)s2)[i])
+			return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
+		if (n)
+			i++;
+		n--;
+	}
+	return (0);
 }

@@ -6,11 +6,9 @@
 /*   By: tembu <tembu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 10:02:30 by tembu             #+#    #+#             */
-/*   Updated: 2020/01/07 17:17:55 by tembu            ###   ########.fr       */
+/*   Updated: 2020/01/09 12:28:47 by tembu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "../inc/libft.h"
 
@@ -40,7 +38,7 @@ static void			fill_words(long int nb, long int len_nb, char *result_nb)
 	result_nb[len_nb] = int_to_char(mod);
 }
 
-char			*ft_itoa(int n)
+char				*ft_itoa(int n)
 {
 	long int	nb;
 	long int	len_nb;

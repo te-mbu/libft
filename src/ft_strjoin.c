@@ -6,7 +6,7 @@
 /*   By: tembu <tembu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 10:03:43 by tembu             #+#    #+#             */
-/*   Updated: 2020/01/08 19:06:44 by tembu            ###   ########.fr       */
+/*   Updated: 2020/01/09 12:29:47 by tembu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static char			*ft_strcat(char *dest, char *src)
 	return (dest);
 }
 
-char			*ft_strjoin(const char *s1, const char *s2)
+char				*ft_strjoin(const char *s1, const char *s2)
 {
 	int		len;
 	char	*string;

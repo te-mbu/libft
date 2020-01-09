@@ -25,6 +25,11 @@ SRCS		=	ft_strlen.c			\
 				ft_putstr_fd.c		\
 				ft_putendl_fd.c		\
 				ft_putnbr_fd.c		\
+				ft_calloc.c			\
+				ft_substr.c			\
+				ft_memccpy.c		\
+				ft_memchr.c			\
+				ft_memcmp.c			\
 				
 OBJS		= ${addprefix ${SRCDIR}, ${SRCS:.c=.o}}
 

@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tembu <tembu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/06 10:03:30 by tembu             #+#    #+#             */
-/*   Updated: 2020/01/06 13:14:38 by tembu            ###   ########.fr       */
+/*   Created: 2020/01/09 15:43:47 by tembu             #+#    #+#             */
+/*   Updated: 2020/01/09 16:32:39 by tembu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "../inc/libft.h"
 
-char *ft_strcpy(char *s1, char *s2)
+char		*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int i;
+	char	*string;
+	size_t	i;
 
 	i = 0;
-	while (s2[i])
+	if (!s)
+		return (NULL);
+	string = (char *)malloc(sizeof(char) * len + 1);
+	if (!string)
+		return (NULL);
+	while (len > 0)
 	{
-		s1[i] = s2[i];
+		string[i] = ((char *)s)[start + i];
 		i++;
+		len--;
 	}
-	s1[i] = '\0';
-	return (s1);
+	string[i] = '\0';
+	return (string);
 }

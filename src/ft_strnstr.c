@@ -6,7 +6,7 @@
 /*   By: tembu <tembu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 17:15:28 by tembu             #+#    #+#             */
-/*   Updated: 2020/01/07 18:03:05 by tembu            ###   ########.fr       */
+/*   Updated: 2020/01/09 12:27:04 by tembu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ char		*ft_strnstr(const char *s1, const char *s2, size_t n)
 	s2_real = (char *)s2;
 	if (!s2_real[0])
 		return (s1_real);
-
 	while (s1_real[i] && i < n)
 	{
 		j = 0;

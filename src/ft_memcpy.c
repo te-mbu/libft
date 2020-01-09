@@ -6,7 +6,7 @@
 /*   By: tembu <tembu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 15:18:48 by tembu             #+#    #+#             */
-/*   Updated: 2020/01/08 15:53:31 by tembu            ###   ########.fr       */
+/*   Updated: 2020/01/09 13:10:05 by tembu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	*ft_memcpy(void *s1, const void *s2, size_t n)
 		return (NULL);
 	src = (unsigned char *)s2;
 	dest = (unsigned char *)s1;
-
 	while (i < n)
 	{
 		dest[i] = src[i];

@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen_char.c                                   :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tembu <tembu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/08 18:45:48 by tembu             #+#    #+#             */
-/*   Updated: 2020/01/08 18:47:30 by tembu            ###   ########.fr       */
+/*   Created: 2020/01/09 11:41:02 by tembu             #+#    #+#             */
+/*   Updated: 2020/01/09 14:38:40 by tembu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 
-int			ft_strlen_char(char *str)
+void		*ft_calloc(size_t count, size_t size)
 {
-	int i;
+	void	*result;
+	size_t	i;
 
 	i = 0;
-	while (str[i])
+	result = NULL;
+	result = malloc(count * size);
+	if (!result)
+		return (NULL);
+	while (i <= count)
+	{
+		((char *)result)[i] = 0;
 		i++;
-	return (i);
+	}
+	return (result);
 }

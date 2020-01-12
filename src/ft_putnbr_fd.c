@@ -6,7 +6,7 @@
 /*   By: tembu <tembu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 17:22:55 by tembu             #+#    #+#             */
-/*   Updated: 2020/01/08 17:35:14 by tembu            ###   ########.fr       */
+/*   Updated: 2020/01/12 15:58:19 by tembu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void			ft_putnbr_fd(int n, int fd)
 	}
 	div = n / 10;
 	mod = n % 10;
-	if (div != 0)
+	if (div)
 		ft_putnbr_fd(div, fd);
 	ft_putchar_fd(mod + 48, fd);
 }

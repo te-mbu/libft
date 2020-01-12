@@ -6,7 +6,7 @@
 /*   By: tembu <tembu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 14:01:36 by tembu             #+#    #+#             */
-/*   Updated: 2020/01/08 15:12:17 by tembu            ###   ########.fr       */
+/*   Updated: 2020/01/12 16:35:45 by tembu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void		*ft_memset(void *b, int c, size_t n)
 {
-	size_t	i;
-	char	*str;
+	size_t			i;
+	unsigned char	*str;
 
 	i = 0;
-	str = (char *)b;
+	str = (unsigned char *)b;
 	while (i < n)
 	{
 		str[i] = c;

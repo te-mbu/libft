@@ -6,31 +6,17 @@
 /*   By: tembu <tembu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 15:22:19 by tembu             #+#    #+#             */
-/*   Updated: 2020/01/09 12:29:13 by tembu            ###   ########.fr       */
+/*   Updated: 2020/01/12 17:06:01 by tembu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 
-static char			*ft_strncpy(char *dest, char *src, unsigned int len)
-{
-	unsigned int i;
-
-	i = 0;
-	while (src[i] && i < len)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
-
 static int			count_words(const char *str, char c)
 {
-	unsigned int i;
-	unsigned int word_len;
-	unsigned int count;
+	size_t i;
+	size_t word_len;
+	size_t count;
 
 	i = 0;
 	count = 0;
@@ -48,15 +34,31 @@ static int			count_words(const char *str, char c)
 	return (count);
 }
 
-static char			**fill_words(char *str, char **chaine,
-								unsigned int nb_words, char c)
+static void			*ft_free(char **str)
 {
-	unsigned int i;
-	unsigned int j;
-	unsigned int word_len;
+	int i;
+
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+	return (NULL);
+}
+
+static char			**fill_words(const char *s, char **chaine,
+								size_t nb_words, char c)
+{
+	size_t	i;
+	size_t	j;
+	size_t	word_len;
+	char	*str;
 
 	i = 0;
 	j = 0;
+	str = (char *)s;
 	while (i < nb_words)
 	{
 		while (str[j] && str[j] == c)
@@ -66,8 +68,8 @@ static char			**fill_words(char *str, char **chaine,
 			word_len++;
 		chaine[i] = (char *)malloc(sizeof(char) * word_len + 1);
 		if (!chaine[i])
-			return (NULL);
-		ft_strncpy(chaine[i], &str[j], word_len);
+			return (ft_free(chaine));
+		ft_strncpy(chaine[i], &(str[j]), word_len);
 		i++;
 		j += word_len;
 	}
@@ -76,16 +78,16 @@ static char			**fill_words(char *str, char **chaine,
 
 char				**ft_split(const char *s, char c)
 {
-	unsigned int	nb_words;
-	char			**chaine;
+	size_t		nb_words;
+	char		**chaine;
 
-	if (!s)
+	if (!s || !c)
 		return (NULL);
 	nb_words = count_words(s, c);
 	chaine = (char **)malloc(sizeof(char *) * nb_words + 1);
 	if (!chaine)
 		return (NULL);
-	chaine = fill_words((char *)s, chaine, nb_words, c);
+	chaine = fill_words(s, chaine, nb_words, c);
 	chaine[nb_words] = 0;
 	return (chaine);
 }

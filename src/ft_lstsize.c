@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tembu <tembu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/08 16:55:29 by tembu             #+#    #+#             */
-/*   Updated: 2020/01/12 16:03:11 by tembu            ###   ########.fr       */
+/*   Created: 2020/01/10 17:59:53 by tembu             #+#    #+#             */
+/*   Updated: 2020/01/12 15:47:30 by tembu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 
-void		ft_putstr_fd(char *s, int fd)
+int			ft_lstsize(t_list *lst)
 {
-	int i;
+	size_t	i;
 
 	i = 0;
-	if (s)
+	while (lst)
 	{
-		while (s[i])
-		{
-			ft_putchar_fd(s[i], fd);
-			i++;
-		}
+		lst = lst->next;
+		i++;
 	}
+	return (i);
 }

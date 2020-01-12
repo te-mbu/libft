@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tembu <tembu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/08 16:55:29 by tembu             #+#    #+#             */
-/*   Updated: 2020/01/12 16:03:11 by tembu            ###   ########.fr       */
+/*   Created: 2020/01/12 17:30:53 by tembu             #+#    #+#             */
+/*   Updated: 2020/01/12 17:39:00 by tembu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 
-void		ft_putstr_fd(char *s, int fd)
+void		ft_lstadd_front(t_list **alst, t_list *new)
 {
-	int i;
-
-	i = 0;
-	if (s)
-	{
-		while (s[i])
-		{
-			ft_putchar_fd(s[i], fd);
-			i++;
-		}
-	}
+	if (!alst || !new)
+		return ;
+	new->next = *alst;
+	*alst = new;
 }

@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tembu <tembu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/08 16:55:29 by tembu             #+#    #+#             */
-/*   Updated: 2020/01/12 16:03:11 by tembu            ###   ########.fr       */
+/*   Created: 2020/01/12 16:42:04 by tembu             #+#    #+#             */
+/*   Updated: 2020/01/12 16:44:41 by tembu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 
-void		ft_putstr_fd(char *s, int fd)
+char		*ft_strcat(char *dest, const char *src)
 {
 	int i;
+	int j;
 
 	i = 0;
-	if (s)
+	j = 0;
+	while (dest[i])
+		i++;
+	while (src[j])
 	{
-		while (s[i])
-		{
-			ft_putchar_fd(s[i], fd);
-			i++;
-		}
+		dest[i + j] = src[j];
+		j++;
 	}
+	dest[i + j] = '\0';
+	return (dest);
 }

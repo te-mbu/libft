@@ -6,7 +6,7 @@
 /*   By: tembu <tembu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 15:43:47 by tembu             #+#    #+#             */
-/*   Updated: 2020/01/09 16:32:39 by tembu            ###   ########.fr       */
+/*   Updated: 2020/01/12 16:20:09 by tembu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,16 @@ char		*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	i = 0;
-	if (!s)
+	if (!s || !len)
 		return (NULL);
+	if (start > ft_strlen(s))
+	{
+		string = (char *)malloc(sizeof(char) * 1);
+		if (!string)
+			return (NULL);
+		string[0] = '\0';
+		return (string);
+	}
 	string = (char *)malloc(sizeof(char) * len + 1);
 	if (!string)
 		return (NULL);

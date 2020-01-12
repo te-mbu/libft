@@ -6,10 +6,9 @@
 /*   By: tembu <tembu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 10:07:21 by tembu             #+#    #+#             */
-/*   Updated: 2020/01/09 14:56:33 by tembu            ###   ########.fr       */
+/*   Updated: 2020/01/09 18:15:34 by tembu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../inc/libft.h"
 
@@ -27,7 +26,7 @@ static int				is_in_charset(char *set, char c)
 	return (0);
 }
 
-static size_t				charset_end(char const *s1, char *set)
+static size_t			charset_end(char const *s1, char *set)
 {
 	size_t i;
 	size_t count;
@@ -42,9 +41,28 @@ static size_t				charset_end(char const *s1, char *set)
 	return (count);
 }
 
-char			*ft_strtrim(char const *s1, char const *set)
+char					*malloc_me(size_t size, char *s1, size_t start_limit)
 {
+	int		i;
+	char	*string;
 
+	i = 0;
+	string = (char *)malloc(sizeof(char) * size + 1);
+	if (!string)
+		return (NULL);
+	while (size > 0)
+	{
+		string[i] = ((char *)s1)[start_limit];
+		start_limit++;
+		i++;
+		size--;
+	}
+	string[i] = '\0';
+	return (string);
+}
+
+char					*ft_strtrim(char const *s1, char const *set)
+{
 	size_t	i;
 	size_t	start_limit;
 	size_t	size;
@@ -66,29 +84,7 @@ char			*ft_strtrim(char const *s1, char const *set)
 		return (string);
 	}
 	start_limit = i;
-	i = 0;
 	size = ft_strlen(s1) - start_limit - charset_end(s1, charset);
-	string = (char *)malloc(sizeof(char) * size + 1);
-	if (!string)
-		return (NULL);
-	while (size > 0)
-	{
-		string[i] = ((char *)s1)[start_limit];
-		start_limit++;
-		i++;
-		size--;
-	}
-	string[i] = '\0';
+	string = malloc_me(size, (char *)s1, start_limit);
 	return (string);
 }
-
-/*
-int			main(void)
-{
-	const char s1[] = "ahahlolal a ahaha";
-	const char set[] = "ah";
-
-	printf("%s\n", ft_strtrim(s1, set));
-	return (0);
-}
-*/

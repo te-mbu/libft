@@ -6,29 +6,11 @@
 /*   By: tembu <tembu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 10:03:43 by tembu             #+#    #+#             */
-/*   Updated: 2020/01/09 12:29:47 by tembu            ###   ########.fr       */
+/*   Updated: 2020/01/12 16:44:35 by tembu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
-
-static char			*ft_strcat(char *dest, char *src)
-{
-	int i;
-	int j;
-
-	i = 0;
-	j = 0;
-	while (dest[i])
-		i++;
-	while (src[j])
-	{
-		dest[i + j] = src[j];
-		j++;
-	}
-	dest[i + j] = '\0';
-	return (dest);
-}
 
 char				*ft_strjoin(const char *s1, const char *s2)
 {
@@ -47,8 +29,8 @@ char				*ft_strjoin(const char *s1, const char *s2)
 	if (!string)
 		return (NULL);
 	string[0] = '\0';
-	ft_strcat(string, real_s1);
-	ft_strcat(string, real_s2);
+	ft_strcat(string, s1);
+	ft_strcat(string, s2);
 	string[len] = '\0';
 	return (string);
 }

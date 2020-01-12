@@ -6,29 +6,26 @@
 /*   By: tembu <tembu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 10:01:50 by tembu             #+#    #+#             */
-/*   Updated: 2020/01/08 13:45:06 by tembu            ###   ########.fr       */
+/*   Updated: 2020/01/10 15:51:05 by tembu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 
-
-int			ft_atoi(const char *str)
+static size_t		ft_atoi_2(const char *str, int *neg)
 {
 	int		i;
-	int		neg;
 	size_t	result;
 
 	i = 0;
-	neg = 1;
 	result = 0;
 	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
 		|| str[i] == '\f' || str[i] == '\r')
 		i++;
-	if (str[i] == '-' || str[i + 1] == '+')
+	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-			neg *= -1;
+			*neg *= -1;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
@@ -36,12 +33,22 @@ int			ft_atoi(const char *str)
 		result = result * 10 + str[i] - 48;
 		i++;
 	}
-	if (result > 2147483648)
+	return (result);
+}
+
+int					ft_atoi(const char *str)
+{
+	int		neg;
+	size_t	result;
+
+	neg = 1;
+	result = ft_atoi_2(str, &neg);
+	if (result > 9223372036854775807)
 	{
+		if (neg == 1)
+			return (-1);
 		if (neg == -1)
 			return (0);
-		else
-			return (-1);
 	}
-	return (result * neg);
+	return ((int)result * neg);
 }

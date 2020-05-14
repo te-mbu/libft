@@ -50,3 +50,24 @@ make
 You should see a libft.a file and some object files (.o).
 
 Now to clean up (removing the .o files and the .c files from the root), call ```make clean```
+
+## How do I use the library ?
+
+1- In the folder create a main file: ```vim main.c```
+2- Use one fonction from the library and compare it to the real one (Example here with ft_atoi):
+```
+#include "libft.h"
+
+int   main(void) {
+  printf("my atoi : %d", ft_atoi("    +365"));
+  printf("real atoi : %d, atoi("    +365"));
+  return (0);
+}
+```
+3- Run it:
+```
+./libft.a main.c && ./a.out
+or
+gcc main.c && ./a.out
+```
+

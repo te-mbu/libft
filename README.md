@@ -70,8 +70,6 @@ int   main(void) {
 ```
 **3-** Run it:
 ```
-./libft.a main.c && ./a.out
-or
-gcc main.c && ./a.out
+gcc -Wall -Werror -Wextra libft.a main.c && ./a.out
 ```
 

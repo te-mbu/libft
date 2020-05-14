@@ -13,8 +13,6 @@ Libft is an individual project at [19](https://www.s19.be/)/[42](https://www.42.
 
 **3. Bonus Functions:** Functions 42 deems will be useful for linked list manipulation
 
-**4. Personal Functions:** Functions I believe will be useful later.
-
 | **Libc functions**  | **Additional functions**  | **Bonus functions** |
 | --- | --- | --- |
 | memset  |  substr | ft_lstnew |

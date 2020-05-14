@@ -42,4 +42,11 @@ Libft is an individual project at [19](https://www.s19.be/)/[42](https://www.42.
 The goal is to create a library called libft.a from the source files so I can later use that library from other projects at 42.
 
 To create that library, after downloading/cloning this project, cd into the project, copy all the files from the sub folders to the root directory and finally, call make:
+```
+git clone https://github.com/te-mbu/libft.git
+cd libft
+make
+```
+You should see a libft.a file and some object files (.o).
 
+Now to clean up (removing the .o files and the .c files from the root), call ```make clean```

@@ -8,8 +8,11 @@ Libft is an individual project at [19](https://www.s19.be/)/[42](https://www.42.
 ## What's in it ?
 
 **1. Libc Functions:** Some of the standard C functions
+
 **2. Additional functions:** Functions 42 deems will be useful for later projects
+
 **3. Bonus Functions:** Functions 42 deems will be useful for linked list manipulation
+
 **4. Personal Functions:** Functions I believe will be useful later.
 
 | **Libc functions**  | **Additional functions**  | **Bonus functions** |
@@ -53,8 +56,10 @@ Now to clean up (removing the .o files and the .c files from the root), call ```
 
 ## How do I use the library ?
 
-1- In the folder create a main file: ```vim main.c```
-2- Use one fonction from the library and compare it to the real one (Example here with ft_atoi):
+**1-** In the folder create a main file: ```vim main.c```
+
+**2-** Use one fonction from the library and compare it to the real one (Example here with ft_atoi):
+
 ```
 #include "libft.h"
 
@@ -64,7 +69,7 @@ int   main(void) {
   return (0);
 }
 ```
-3- Run it:
+**3-** Run it:
 ```
 ./libft.a main.c && ./a.out
 or

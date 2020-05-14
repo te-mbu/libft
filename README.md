@@ -58,7 +58,8 @@ Now to clean up (removing the .o files and the .c files from the root), call ```
 
 **1-** In the folder create a main file: ```vim main.c```
 
-**2-** Use one fonction from the library and compare it to the real one (Example here with ft_atoi):
+**2-** Use one fonction from the library (You can compare it to the real one).
+Example here with ft_atoi:
 
 ```
 #include "libft.h"
